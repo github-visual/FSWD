@@ -34,25 +34,20 @@ document.addEventListener("DOMContentLoaded", () => {
   function displayWeatherData(weatherData) {
     const { name, main, weather } = weatherData;
 
-    // If weather info is already visible, fade out first
     if (weatherInfo.classList.contains("show")) {
       weatherInfo.classList.remove("show");
       weatherInfo.classList.add("fade-out");
 
-      // After fade-down completes (1s = CSS transition time)
       setTimeout(() => {
         updateWeatherContent(name, main.temp, weather[0].description);
-        // Fade up (new data)
         weatherInfo.classList.remove("fade-out");
         weatherInfo.classList.add("show");
       }, 1000);
     } else {
-      // First time showing (no fade-out needed)
       updateWeatherContent(name, main.temp, weather[0].description);
       weatherInfo.classList.add("hidden");
       weatherInfo.classList.remove("show");
 
-      // Delay showing (your original 2-second delay)
       setTimeout(() => {
         weatherInfo.classList.remove("hidden");
         void weatherInfo.offsetWidth;
