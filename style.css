@@ -1,0 +1,140 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+.container {
+  position: relative;
+  bottom: 10%;
+  height: 60%;
+  width: 60%;
+}
+p {
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: italic;
+  font-size: large;
+  text-align: center;
+}
+.input {
+  border-radius: 30px;
+  height: 70%;
+  width: 100%;
+  padding: 30px;
+  text-align: center;
+  background: linear-gradient(
+    to right,
+    rgba(162, 224, 248, 0.863),
+    rgb(75, 177, 218)
+  );
+  color: black;
+}
+.input-container {
+  display: grid;
+  gap: 10px;
+}
+input[type="text"] {
+  width: 200px;
+  padding: 15px;
+  border: none;
+  outline: none;
+  border-radius: 50px;
+  background: linear-gradient(to right, white, rgba(185, 226, 245, 0.849));
+  margin-bottom: 10px;
+}
+#weather-info {
+  font-family: "Poppins", "Segoe UI", Arial, sans-serif;
+  display: grid;
+  transform: translateY(30px);
+  transition: opacity 1s ease, transform 1s ease;
+  opacity: 0;
+}
+#weather-info.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+#weather-info.fade-out {
+  opacity: 0;
+  transform: translateY(30px);
+}
+#city-name {
+  color: white;
+  font-weight: bolder;
+  font-size: xx-large;
+  font-weight: 100;
+  position: relative;
+  bottom: 30px;
+}
+#temperature {
+  position: relative;
+  bottom: 50px;
+  font-weight: 900;
+  font-size: 30px;
+  color: white;
+}
+#description {
+  position: relative;
+  bottom: 60px;
+  color: white;
+  font-size: x-large;
+  font-weight: 200;
+  font-style: italic;
+}
+button {
+  border: none;
+  width: 15%;
+  padding: 5px;
+  border-radius: 50px;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+  color: white;
+  background-color: rgba(255, 255, 255, 0);
+  box-shadow: 0 4px 10px rgba(0, 174, 255, 0.4),
+    inset 0 0 8px rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(4px);
+  transition: background 0.4s ease, box-shadow 0.4s ease, transform 0.3s ease,
+    color 0.4s ease;
+}
+
+button:hover {
+  background: linear-gradient(
+    135deg,
+    rgba(155, 212, 236, 0.9),
+    rgba(35, 167, 228, 0.808)
+  );
+  box-shadow: 0 6px 20px rgba(170, 228, 255, 0.692),
+    inset 0 0 15px rgba(59, 143, 221, 0.6);
+  transform: scale(1.07);
+  cursor: pointer;
+  text-shadow: 2px 2px 2px rgba(255, 255, 255, 0.39);
+}
+
+button:active {
+  transform: scale(0.97);
+  box-shadow: 0 2px 8px rgba(0, 174, 255, 0.4);
+}
+
+h1 {
+  position: relative;
+  bottom: 5%;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 800;
+  background: linear-gradient(
+    to right,
+    rgba(1, 154, 255, 0.918),
+    rgb(241, 252, 255),
+    rgba(1, 154, 255, 0.918),
+    rgb(241, 252, 255),
+    rgba(1, 154, 255, 0.918)
+  );
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+}
+.hidden {
+  display: none;
+}
